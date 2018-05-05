@@ -3,11 +3,10 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class SearchService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  getPropertyByAddress() {
-    this.http.get('localhost:3000/search');
+  getPropertyByAddress(address: string) {
+    // console.log ('From the service', address);
+    return this.http.post('/api/search', { address });
   }
-
 }

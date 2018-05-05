@@ -10,12 +10,18 @@ import { SearchService } from '../../services/search.service';
   providers: [SearchService]
 })
 export class SearchFormComponent implements OnInit {
+
+  
   constructor(private http: HttpClient, private searchService: SearchService) {
   }
 
   ngOnInit() {}
   onSubmit(form: NgForm) {
-    console.log(form.value);
+    this.searchService.getPropertyByAddress(form.value.propertyAddress)
+      .subscribe(
+        value => console.log('from da server: ', value),
+        err => console.log('zomg error', err)
+      );
 
 
 
