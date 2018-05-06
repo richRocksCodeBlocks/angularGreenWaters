@@ -29,8 +29,11 @@
       <h3>{{propertyInfo.street_address}}</h3>
       <h3>{{propertyInfo.city}}, {{propertyInfo.state}} {{propertyInfo.zip}}</h3>
 
+
       <div class="row">
-        <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom"></agm-map>
+        <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+          <agm-marker [latitude]="currentLat" [longitude]="currentLng"></agm-marker>
+        </agm-map>
       </div>
     </div>
   </div>
