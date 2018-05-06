@@ -10,21 +10,7 @@ import { SearchService } from '../../services/search.service';
   providers: [SearchService]
 })
 export class SearchFormComponent implements OnInit {
-  // building_name = '';
-  // city = '';
-  // g_city = '';
-  // g_county = '';
-  // g_neighborhood = '';
-  // g_placeid = '';
-  // g_state = '';
-  // g_street_name = '';
-  // g_street_number = '';
-  // latitude = '';
-  // longitude = '';
-  // property_id;
-  // state = '';
-  // street_address = '';
-  // zip;
+
   propertyInfo = {};
   propertySearched = false;
 

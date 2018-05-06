@@ -14,6 +14,10 @@ import { HomeComponent } from './home/home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { SearchService } from './services/search.service';
 import { AgmCoreModule } from '@agm/core';
+import { PostPropertyComponent } from './post/post-property/post-property.component';
+import { PostListingComponent } from './post/post-listing/post-listing.component';
+import { AddService } from './services/add.service';
+import { DropdownDirective } from './shared/dropdown.directive';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -31,7 +35,10 @@ const appRoutes: Routes = [
     SearchMapComponent,
     PostComponent,
     HomeComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    PostPropertyComponent,
+    PostListingComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
@@ -43,7 +50,7 @@ const appRoutes: Routes = [
       apiKey: 'AIzaSyBU3TExBVL5aEaeNn6cQQE4H6Qzjd98MVA'
     })
   ],
-  providers: [SearchService],
+  providers: [SearchService, AddService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
