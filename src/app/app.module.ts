@@ -13,6 +13,7 @@ import { PostComponent } from './post/post.component';
 import { HomeComponent } from './home/home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { SearchService } from './services/search.service';
+import { AgmCoreModule } from '@agm/core';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -37,7 +38,10 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBU3TExBVL5aEaeNn6cQQE4H6Qzjd98MVA'
+    })
   ],
   providers: [SearchService],
   bootstrap: [AppComponent]

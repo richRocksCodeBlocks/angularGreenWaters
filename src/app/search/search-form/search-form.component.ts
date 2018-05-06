@@ -10,8 +10,34 @@ import { SearchService } from '../../services/search.service';
   providers: [SearchService]
 })
 export class SearchFormComponent implements OnInit {
+// building_name = '';
+// city = '';
+// g_city = '';
+// g_county = '';
+// g_neighborhood = '';
+// g_placeid = '';
+// g_state = '';
+// g_street_name = '';
+// g_street_number = '';
+// latitude = '';
+// longitude = '';
+// property_id;
+// state = '';
+// street_address = '';
+// zip;
+propertyInfo;
+propertySearched = false;
 
-  
+// google maps zoom level
+zoom: number = 12;
+
+// initial center position for map
+
+lat: number = 21.30;
+lng: number = -157.85;
+
+
+
   constructor(private http: HttpClient, private searchService: SearchService) {
   }
 
@@ -19,7 +45,11 @@ export class SearchFormComponent implements OnInit {
   onSubmit(form: NgForm) {
     this.searchService.getPropertyByAddress(form.value.propertyAddress)
       .subscribe(
-        value => console.log('from da server: ', value),
+        value => {console.log('from da server: ', value );
+          this.propertySearched = true;
+          this.propertyInfo = value[0];
+          // console.log('this.propertyInfo', this.propertyInfo);
+        },
         err => console.log('zomg error', err)
       );
 

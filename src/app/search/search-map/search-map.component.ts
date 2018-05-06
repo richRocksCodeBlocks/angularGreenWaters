@@ -8,17 +8,20 @@ let google: any;
   styleUrls: ['./search-map.component.css']
 })
 export class SearchMapComponent implements OnInit {
-@ViewChild('map') map: ElementRef;
+// google maps zoom level
+zoom: number = 12;
+
+// initial center position for map
+
+lat: number = 21.30;
+lng: number = -157.85;
+
 
 
   constructor() { }
 
   ngOnInit() {
-  //   const options = {
-  //     center : {lat: 21.3069, lng: -157.8583},
-  //     zoom: 8
-  //   };
-  //   const map = new google.maps.Map(this.map, options);
+
   }
 
 }
