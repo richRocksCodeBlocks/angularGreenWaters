@@ -1,0 +1,21 @@
+<div class="container-fluid">
+<div *ngIf="propertySearched" class="row">
+    <main class="py-f">
+      <div class="row">
+        <h2>Property Information</h2>
+        <h3>
+          <strong>{{ propertyInfo.building_name }}</strong>
+        </h3>
+        <h3>{{propertyInfo.street_address}}</h3>
+        <h3>{{propertyInfo.city}}, {{propertyInfo.state}} {{propertyInfo.zip}}</h3>
+        <br>
+        <br>
+        <br>
+
+        <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+          <agm-marker [latitude]="currentLat" [longitude]="currentLng"></agm-marker>
+        </agm-map>
+      </div>
+    </main>
+  </div>
+</div>
