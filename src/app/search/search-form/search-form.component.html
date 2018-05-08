@@ -1,20 +1,35 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-8">
-      <h1>Property Search</h1>
+    <div class="col-lg-8">
+      <h3>Property Search</h3>
       <form (ngSubmit)="onSubmit(f)" #f="ngForm">
         <div class="form-group">
           <label for="property-address">Property Address</label>
           <input type="text" id="property-address" class="form-control" ngModel name="propertyAddress" required>
         </div>
-        <button class="btn btn-primary" type="submit">Submit</button>
+        <button class="btn btn-primary" type="submit" (click)="displaySearch()">Submit</button>
       </form>
-      <br>
-      <br>
-      <hr>
-      <h1>Listing Search</h1>
-      <form (ngSubmit)="onSubmit(f)" #l="ngForm">
+    </div>
+    <div class="col-lg-1"></div>
+    <div class="col-lg-3">
+     <img src="./assets/logo.png">
+    </div>
+  </div>
+  <br>
+  <hr>
+  <br>
+
+  <h3>Listing Search</h3>
+  <form (ngSubmit)="onSubmit(f)" #l="ngForm">
+
+    <div class="row">
+      <div class="col-lg-8">
         <div class="form-group">
+          <label for="property-address">Property Address</label>
+          <input type="text" id="property-address" class="form-control" ngModel name="propertyAddress" required>
+        </div>
+      </div>
+        <div class="col-lg-4">
           <label for="property-type">Property Type</label>
           <select name="property-type" id="property-type" class="form-control" ngModel name="propertyType" required>
             <option value="industrial">Industrial</option>
@@ -23,70 +38,58 @@
             <option value="multi-family">Multi-Family</option>
           </select>
         </div>
-        
-        <div class="form-group">
-          <label for="property-address">Property Address</label>
-          <input type="text" id="property-address" class="form-control" ngModel name="propertyAddress" required>
-        </div>
-
-        <div class="form-group">
-          <label for="property-address">Building Name</label>
-          <input type="text" id="building-name" class="form-control" ngModel name="buildingName" required>
-        </div>
-        <div class="form-group">
-            <form class="form-inline">
-              <div class="form-group">
-                <label for="property-address">Price Minimum</label>
-                <input type="text" id="price-min" class="form-control" ngModel name="priceMin" required>
-              </div>
-  
-              <div class="form-group">
-                <label for="property-address">Price Maximum</label>
-                <input type="text" id="price-max" class="form-control" ngModel name="priceMax" required>
-              </div>
-            </form>
-          </div>
-          <div class="form-group">
-              <form class="form-inline">
-                <div class="form-group">
-                  <label for="property-address">Square Foot Minimum</label>
-                  <input type="text" id="size-min" class="form-control" ngModel name="sizeMin" required>
-                </div>
-    
-                <div class="form-group">
-                  <label for="property-address">Square Foot Maximum</label>
-                  <input type="text" id="size-max" class="form-control" ngModel name="sizeMax" required>
-                </div>
-              </form>
-            </div>
-
-
-
-
-        <button class="btn btn-primary" type="submit">Submit</button>
-      </form>
-      <br>
-      <br>
-      <div *ngIf="propertySearched" class="row">
-        <hr>
-        <main class="py-f">
-          <div class="container">
-            <div class="row">
-              <h2>Property Information</h2>
-              <h3>
-                <strong>{{ propertyInfo.building_name }}</strong>
-              </h3>
-              <h3>{{propertyInfo.street_address}}</h3>
-              <h3>{{propertyInfo.city}}, {{propertyInfo.state}} {{propertyInfo.zip}}</h3>
-              <br>
-              <br>
-              <br>
-
-              <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
-                <agm-marker [latitude]="currentLat" [longitude]="currentLng"></agm-marker>
-              </agm-map>
-            </div>
-          </div>
-        </main>
-
       </div>
+    <div class="row">
+    <div class="form-group col-lg-8">
+      <label for="property-address">Building Name</label>
+      <input type="text" id="building-name" class="form-control" ngModel name="buildingName" required>
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+  <div class="row">
+    <div class="form-group col-lg-3">
+      <label for="property-address">Price Minimum</label>
+      <input type="text" id="price-min" class="form-control" ngModel name="priceMin" required>
+    </div>
+
+    <div class="form-group col-lg-3">
+      <label for="property-address">Price Maximum</label>
+      <input type="text" id="price-max" class="form-control" ngModel name="priceMax" required>
+    </div>
+
+    <div class="form-group col-lg-3">
+      <label for="property-address">Square Foot Minimum</label>
+      <input type="text" id="size-min" class="form-control" ngModel name="sizeMin" required>
+    </div>
+
+    <div class="form-group col-lg-3">
+      <label for="property-address">Square Foot Maximum</label>
+      <input type="text" id="size-max" class="form-control" ngModel name="sizeMax" required>
+    </div>
+  </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+  <br>
+  <br>
+  <hr>
+  <div *ngIf="propertySearched" class="row">
+    <main class="py-f">
+      <div class="row">
+        <h2>Property Information</h2>
+        <h3>
+          <strong>{{ propertyInfo.building_name }}</strong>
+        </h3>
+        <h3>{{propertyInfo.street_address}}</h3>
+        <h3>{{propertyInfo.city}}, {{propertyInfo.state}} {{propertyInfo.zip}}</h3>
+        <br>
+        <br>
+        <br>
+
+        <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+          <agm-marker [latitude]="currentLat" [longitude]="currentLng"></agm-marker>
+        </agm-map>
+      </div>
+    </main>
+  </div>
+
+</div>

@@ -1,0 +1,4 @@
+0000000000000000000000000000000000000000 a70c48a96404d38b4e139ba4bf4faf54d18eeade quinlayen <quinlayen@gmail.com> 1524948416 -1000	branch: Created from HEAD
+a70c48a96404d38b4e139ba4bf4faf54d18eeade 66577133032a1daa0ac3dc8557af572b8f2f76d6 quinlayen <quinlayen@gmail.com> 1524951515 -1000	commit: components created and connected properly
+66577133032a1daa0ac3dc8557af572b8f2f76d6 8b78e12049a6dc760c5ad9162646e5e1641624b2 quinlayen <quinlayen@gmail.com> 1524952498 -1000	commit: header structure created
+8b78e12049a6dc760c5ad9162646e5e1641624b2 2b57848e90b97609444540404368638713f5b197 quinlayen <quinlayen@gmail.com> 1524967967 -1000	commit: basic routes set up

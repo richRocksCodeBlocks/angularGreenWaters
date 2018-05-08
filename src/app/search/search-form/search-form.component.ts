@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { SearchService } from '../../services/search.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-form',
@@ -26,7 +27,7 @@ export class SearchFormComponent implements OnInit {
   currentLat: number;
   currentLng: number;
 
-  constructor(private http: HttpClient, private searchService: SearchService) {}
+  constructor(private http: HttpClient, private searchService: SearchService, private router: Router) {}
 
   ngOnInit() {}
   onSubmit(form: NgForm) {
@@ -41,5 +42,8 @@ export class SearchFormComponent implements OnInit {
       },
       err => console.log('zomg error', err)
     );
+  }
+  searchDisplay() {
+    this.router.navigate(['/display']);
   }
 }

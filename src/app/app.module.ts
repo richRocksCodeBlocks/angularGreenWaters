@@ -18,12 +18,14 @@ import { PostPropertyComponent } from './post/post-property/post-property.compon
 import { PostListingComponent } from './post/post-listing/post-listing.component';
 import { AddService } from './services/add.service';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { SearchDisplayComponent } from './search/search-display/search-display.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'about', component: AboutUsComponent},
   {path: 'search', component: SearchComponent},
-  {path: 'post', component: PostComponent}
+  {path: 'post', component: PostComponent},
+  {path: 'display', component: SearchDisplayComponent}
 ];
 
 @NgModule({
@@ -38,7 +40,8 @@ const appRoutes: Routes = [
     AboutUsComponent,
     PostPropertyComponent,
     PostListingComponent,
-    DropdownDirective
+    DropdownDirective,
+    SearchDisplayComponent
   ],
   imports: [
     BrowserModule,
